@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты теста</title>
+    <style type="text/css">
+    HEADER {
+    width: 100%; height: 70px;
+    background: #181513; /*  фона */
+    border: 2px solid #fc0; /* рамка */
+    }
+    H2 {
+    font-size: 150%;
+    }
+    TABLE {
+    width: 300px;
+    border-collapse: collapse;
+    }
+    TD, TH {
+    padding: 7px;
+    border: 2px solid #fc0;
+    }
+</style>
+</head>
+<body bgcolor="#181513">
+<font color="#c0c0c0">
+<header>
+        <center>
+            <h2 onclick="window.location='/index'">
+                STAR WARS
+            </h2>
+        </center>
+</header>
+    <center>
+        <h2>{{ candidate_name }}</h2>
+        <table>
+            <tr><th>Вопрос</th><th>Ответ</th></tr>
+            {% for test in test_list %}
+            <tr>
+                <td>{{ test.test_question.text }}</td>
+                <td>{{ test.test_answer.text }}</td>
+            </tr>
+            {% endfor %}
+            <tr><th>Всего вопросов: {{ question }}</th><th nowrap>Правильных: {{ answer }}</th></tr>
+        </table>
+    </center>
+</font>
+</body>
+</html>
